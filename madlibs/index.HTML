@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Madlibs Baby</h1>
+    <form id="madlibs">
+      <label
+        >Type Something:
+        <input type="text" placeholder="Type something here" />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="response">Response will go here</p>
+    <script>
+      console.log("Page loaded");
+      const myForm = document.querySelector("#madlibs");
+      const responseParagraph = document.querySelector("#response");
+      myForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("it was clicked");
+        const theForm = event.target;
+        console.log(theForm);
+        const myInput = theForm.querySelector("input");
+        console.log(myInput.value);
+        responseParagraph.innerHTML = myInput.value;
+      });
+    </script>
+  </body>
+</html>
